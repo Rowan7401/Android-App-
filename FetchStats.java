@@ -1,4 +1,4 @@
-package com.example.whowroteit;
+package com.example.nbastatsapp;
 
 import android.os.AsyncTask;
 import android.util.Log;
@@ -16,11 +16,11 @@ import java.lang.ref.WeakReference;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class FetchBook extends AsyncTask<String, Void, String> {
+public class FetchStats extends AsyncTask<String, Void, String> {
     private WeakReference<TextView> mTitleText;
     private WeakReference<TextView> mAuthorText;
 
-    FetchBook(TextView titleText, TextView authorText) {
+    FetchStats(TextView titleText, TextView authorText) {
         this.mTitleText = new WeakReference<>(titleText);
         this.mAuthorText = new WeakReference<>(authorText);
     }
