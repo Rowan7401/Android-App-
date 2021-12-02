@@ -12,8 +12,6 @@ import android.widget.TextView;
 import java.util.LinkedList;
 
 public class MainActivity extends AppCompatActivity {
-    private final LinkedList<String> mRecipeList = new LinkedList<>();
-    private final LinkedList<String> mRecipeDescriptionList = new LinkedList<>();
     private RecyclerView mRecyclerView;
     private TeamListAdapter mAdapter;
 
@@ -21,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mTitleText;
     private TextView mAuthorText;
     private final LinkedList<String> mTeamList = new LinkedList<>();
-    private final LinkedList<String> mPlayerList = new LinkedList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,19 +29,21 @@ public class MainActivity extends AppCompatActivity {
         //mTeamRecord = (EditText) findViewById(R.id."teamRecord");
 
         mTeamList.add("Chicago Bulls");
-        mPlayerList.add("Zach Lavine");
+        mTeamList.add("Los Angeles Lakers");
+        mTeamList.add("Memphis Grizzlies");
+
 
         mRecyclerView = findViewById(R.id.recyclerView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        mAdapter = new TeamListAdapter(this, mTeamList, mPlayerList);
+        mAdapter = new TeamListAdapter(this, mTeamList);
         mRecyclerView.setAdapter(mAdapter);
 
     }
 
-    public void searchBooks(View view) {
-        String queryString = mBookInput.getText().toString();
-        FetchStats fb = new FetchStats(mTeamRecord);
-        fb.execute(queryString);
-    }
+//    public void searchBooks(View view) {
+//        String queryString = mBookInput.getText().toString();
+//        FetchStats fb = new FetchStats(mTeamRecord);
+//        fb.execute(queryString);
+//    }
 }
