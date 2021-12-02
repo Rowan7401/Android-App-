@@ -22,7 +22,6 @@ public class bulls_detail extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bulls_detail);
-        Intent intent = getIntent();
 
         mPlayerList.add("Zach Lavine");
         mPlayerList.add("Lonzo Ball");
