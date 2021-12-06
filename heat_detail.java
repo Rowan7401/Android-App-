@@ -12,16 +12,17 @@ import com.example.nbastatsapp.R;
 
 import java.util.LinkedList;
 
-public class bulls_detail extends AppCompatActivity {
+public class heat_detail extends AppCompatActivity {
     private RecyclerView mRecyclerView;
-    private PlayerListAdapter mAdapter;
+    private PlayerListAdapter2 mAdapter;
 
     private final LinkedList<String> mPlayerListHeat = new LinkedList<>();
+    private final LinkedList<String> mHeatStats = new LinkedList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.bulls_detail);
+        setContentView(R.layout.heat_detail);
 
         mPlayerListHeat.add("Bam Adebayo");
         mPlayerListHeat.add("Jimmy Butler");
@@ -39,10 +40,15 @@ public class bulls_detail extends AppCompatActivity {
         mPlayerListHeat.add("Gabe Vincent");
         mPlayerListHeat.add("Omer Yurtseven");
 
+        mHeatStats.add("10/15 3pt");
+        mHeatStats.add("10/15 3pt");
+        mHeatStats.add("10/15 3pt");
+        mHeatStats.add("10/15 3pt");
+
         mRecyclerView = findViewById(R.id.recyclerView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        mAdapter = new PlayerListAdapter(this, mPlayerList);
+        mAdapter = new PlayerListAdapter2(this, mPlayerListHeat, mHeatStats);
         mRecyclerView.setAdapter(mAdapter);
     }
 

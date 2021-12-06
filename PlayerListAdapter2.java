@@ -13,53 +13,57 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.LinkedList;
 
-public class TeamListAdapter extends
-        RecyclerView.Adapter<TeamListAdapter.WordViewHolder>{
+public class PlayerListAdapter2 extends
+        RecyclerView.Adapter<PlayerListAdapter2.WordViewHolder>{
     private LayoutInflater mInflater;
-    private LinkedList<String> mTeamList;
+    private LinkedList<String> mPlayerListHeat;
+    private LinkedList<String> mHeatStats;
     private Context context;
 
 
-    public TeamListAdapter(Context context,
-                         LinkedList<String> teamList) {
-
+    public PlayerListAdapter2(Context context, LinkedList<String> playerListHeat, LinkedList<String> heatStats) {
         mInflater = LayoutInflater.from(context);
-        mTeamList = teamList;
+        mPlayerListHeat = playerListHeat;
+        mHeatStats = heatStats;
         this.context = context;
     }
 
     @NonNull
     @Override
     public WordViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View mItemView = mInflater.inflate(R.layout.team_item, parent, false);
+        View mItemView = mInflater.inflate(R.layout.player_item, parent, false);
         return new WordViewHolder(mItemView, this);
     }
 
     @Override
     public void onBindViewHolder(@NonNull WordViewHolder holder, int position) {
-        String mCurrent = mTeamList.get(position);
-        holder.mTeamListView.setText(mCurrent);
+        String mCurrent = mPlayerListHeat.get(position);
+        String mCurrent2 = mHeatStats.get(position);
+        holder.mPlayerListView.setText(mCurrent);
+        holder.mHeatStatsView.setText(mCurrent2);
     }
 
     @Override
     public int getItemCount() {
-        return mTeamList.size();
+        return mPlayerListHeat.size();
     }
 
     class WordViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        private TextView mTeamListView;
-        private TeamListAdapter adapter;
+        private TextView mPlayerListView;
+        private TextView mHeatStatsView;
+        private PlayerListAdapter2 adapter;
 
-        public WordViewHolder(View itemView, TeamListAdapter adapter) {
+        public WordViewHolder(View itemView, PlayerListAdapter2 adapter) {
             super(itemView);
-            mTeamListView = itemView.findViewById(R.id.teams);
+            mPlayerListView = itemView.findViewById(R.id.players);
+            mHeatStatsView = itemView.findViewById(R.id.stats);
             this.adapter = adapter;
             itemView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(context, heat_detail.class);
+            Intent intent = new Intent(context, bulls_detail.class);
             context.startActivity(intent);
         }
 

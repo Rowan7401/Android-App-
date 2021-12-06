@@ -1,3 +1,4 @@
+/*
 package com.example.nbastatsapp;
 
 import android.content.Intent;
@@ -60,4 +61,4 @@ public class heat_stats extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
 
     }
-}
+}*/

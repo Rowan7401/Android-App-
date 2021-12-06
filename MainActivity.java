@@ -29,8 +29,7 @@ public class MainActivity extends AppCompatActivity {
         //mTeamRecord = (EditText) findViewById(R.id."teamRecord");
 
         mTeamList.add("Chicago Bulls");
-        mTeamList.add("Los Angeles Lakers");
-        mTeamList.add("Memphis Grizzlies");
+        mTeamList.add("Miami Heat");
 
 
         mRecyclerView = findViewById(R.id.recyclerView);
