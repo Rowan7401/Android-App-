@@ -16,29 +16,35 @@ public class bulls_detail extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private PlayerListAdapter mAdapter;
 
-    private final LinkedList<String> mPlayerList = new LinkedList<>();
-    private final LinkedList<String> mBullsStats = new LinkedList<>();
+    private final LinkedList<String> mPlayerListBulls = new LinkedList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bulls_detail);
 
-        mPlayerList.add("Zach Lavine");
-        mPlayerList.add("Lonzo Ball");
-        mPlayerList.add("Alex Caruso");
-        mPlayerList.add("Demar DeRozan");
-        mPlayerList.add("Nikola Vucivic");
+        mPlayerListBulls.add("Lonzo Ball");
+        mPlayerListBulls.add("Tony Bradley");
+        mPlayerListBulls.add("Troy Brown Jr");
+        mPlayerListBulls.add("Alex Caruso");
+        mPlayerListBulls.add("Tyler Cook");
+        mPlayerListBulls.add("Demar Derozan");
+        mPlayerListBulls.add("Ayo Dosunmu");
+        mPlayerListBulls.add("Devon Dotson");
+        mPlayerListBulls.add("Javonte Green");
+        mPlayerListBulls.add("Alize Johnson");
+        mPlayerListBulls.add("Derrick Jones Jr");
+        mPlayerListBulls.add("Zach Lavine");
+        mPlayerListBulls.add("Marko Simonovic");
+        mPlayerListBulls.add("Nikola Vucevuc");
+        mPlayerListBulls.add("Coby White");
+        mPlayerListBulls.add("Patrick Williams");
 
-        mBullsStats.add("10/15 3pt");
-        mBullsStats.add("10/15 3pt");
-        mBullsStats.add("10/15 3pt");
-        mBullsStats.add("10/15 3pt");
 
         mRecyclerView = findViewById(R.id.recyclerView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        mAdapter = new PlayerListAdapter(this, mPlayerList, mBullsStats);
+        mAdapter = new PlayerListAdapter(this, mPlayerListBulls);
         mRecyclerView.setAdapter(mAdapter);
     }
 
