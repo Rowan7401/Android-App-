@@ -17,6 +17,7 @@ public class bulls_detail extends AppCompatActivity {
     private PlayerListAdapter mAdapter;
 
     private final LinkedList<String> mPlayerList = new LinkedList<>();
+    private final LinkedList<String> mBullsStats = new LinkedList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +30,15 @@ public class bulls_detail extends AppCompatActivity {
         mPlayerList.add("Demar DeRozan");
         mPlayerList.add("Nikola Vucivic");
 
+        mBullsStats.add("10/15 3pt");
+        mBullsStats.add("10/15 3pt");
+        mBullsStats.add("10/15 3pt");
+        mBullsStats.add("10/15 3pt");
+
         mRecyclerView = findViewById(R.id.recyclerView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        mAdapter = new PlayerListAdapter(this, mPlayerList);
+        mAdapter = new PlayerListAdapter(this, mPlayerList, mBullsStats);
         mRecyclerView.setAdapter(mAdapter);
     }
 
