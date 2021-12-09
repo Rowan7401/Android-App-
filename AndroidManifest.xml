@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.nbastatsapp">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,17 +20,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".bulls_detail"
+        <activity android:name=".heat_detail"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
-        </activity>
-        <activity android:name=".bulls_stats"
-            android:parentActivityName=".bulls_detail">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".bulls_detail" />
         </activity>
     </application>
 
