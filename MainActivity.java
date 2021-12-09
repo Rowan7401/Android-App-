@@ -15,9 +15,6 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private TeamListAdapter mAdapter;
 
-    private EditText mBookInput;
-    private TextView mTitleText;
-    private TextView mAuthorText;
     private final LinkedList<String> mTeamList = new LinkedList<>();
 
 
@@ -26,9 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //mTeamRecord = (EditText) findViewById(R.id."teamRecord");
 
-        mTeamList.add("Chicago Bulls");
         mTeamList.add("Miami Heat");
 
 
@@ -40,9 +35,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-//    public void searchBooks(View view) {
-//        String queryString = mBookInput.getText().toString();
-//        FetchStats fb = new FetchStats(mTeamRecord);
-//        fb.execute(queryString);
-//    }
 }
